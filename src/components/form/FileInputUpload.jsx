@@ -42,7 +42,7 @@ export default function InputFileUpload(props) {
         </SvgIcon>
       }
     >
-      Upload a file
+      Upload your photo
       <VisuallyHiddenInput
         type="file"
         accept="image/*"
