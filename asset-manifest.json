@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.1d7876ed.css",
-    "main.js": "/react-gh-pages/static/js/main.bf5aefee.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.1d7876ed.css.map": "/react-gh-pages/static/css/main.1d7876ed.css.map",
-    "main.bf5aefee.js.map": "/react-gh-pages/static/js/main.bf5aefee.js.map"
+    "main.css": "/support_palestine/static/css/main.1d7876ed.css",
+    "main.js": "/support_palestine/static/js/main.bf5aefee.js",
+    "index.html": "/support_palestine/index.html",
+    "main.1d7876ed.css.map": "/support_palestine/static/css/main.1d7876ed.css.map",
+    "main.bf5aefee.js.map": "/support_palestine/static/js/main.bf5aefee.js.map"
   },
   "entrypoints": [
     "static/css/main.1d7876ed.css",
