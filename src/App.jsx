@@ -24,11 +24,14 @@ export default function App() {
         }}
       >
         <Typography sx={{ textAlign: "center" }}>
-          Show you support for Palestine 🇵🇸 by adding the Palestine flag to your
-          profile picture on social media{" "}
+          Show you support for Palestine 🇵🇸 by adding the Palestinian's flag to
+          your profile picture on social media
         </Typography>
         <ImageHandler />
-        <Typography sx={{ textAlign: "center" }}>#Ceasefire 🇵🇸✌🏼</Typography>
+        <Typography sx={{ textAlign: "center" }}>
+          Your image is not being uploaded to any server; all the effects are
+          processed on your device. 🇵🇸✌🏼
+        </Typography>
       </Box>
     </Box>
   );

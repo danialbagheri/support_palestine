@@ -4,6 +4,7 @@ import "react-image-crop/dist/ReactCrop.css";
 import { useDebounceEffect } from "./useDebounceEffect";
 import { canvasPreview } from "./CanvasPreview";
 import Button from "@mui/joy/Button";
+import canvasSize from "canvas-size";
 
 export default function ImageCropper({ src, imageRef, setImage, setOpen }) {
   const [crop, setCrop] = React.useState();
@@ -47,7 +48,26 @@ export default function ImageCropper({ src, imageRef, setImage, setOpen }) {
       completedCrop.width * scaleX,
       completedCrop.height * scaleY
     );
-    const ctx = offscreen.getContext("2d");
+
+    // console.log("image.width, image.height", image.width, image.height);
+    // console.log("completedCrop.width * scaleX", completedCrop.width * scaleX);
+    // ********
+    // const canvasLimitation = await canvasSize.maxArea({
+    //   usePromise: true,
+    //   useWorker: true,
+    // });
+
+    // const maxSize = Math.max(image.width, image.height);
+    // const safeArea = 1 * ((maxSize / 2) * Math.sqrt(2));
+
+    // if (safeArea > canvasLimitation.height) {
+    //   safeArea *= canvasLimitation.height / safeArea;
+    // }
+    // console.log(safeArea);
+    // console.log("width", image.naturalWidth / image.width);
+    // const offscreen = new OffscreenCanvas(safeArea, safeArea);
+    // ************
+    const ctx = offscreen.getContext("2d", { willReadFrequently: true });
     if (!ctx) {
       throw new Error("No 2d context");
     }
@@ -70,7 +90,7 @@ export default function ImageCropper({ src, imageRef, setImage, setOpen }) {
     });
     const blobImage = new Image();
     blobImage.src = URL.createObjectURL(blob);
-    console.log("blob", blobImage);
+    // console.log("blob", blobImage);
     setImage(blobImage);
     setOpen(false);
   }
@@ -91,6 +111,7 @@ export default function ImageCropper({ src, imageRef, setImage, setOpen }) {
             <canvas
               ref={previewCanvasRef}
               style={{
+                display: "none",
                 border: "1px solid black",
                 objectFit: "contain",
                 width: completedCrop.width,
@@ -98,7 +119,7 @@ export default function ImageCropper({ src, imageRef, setImage, setOpen }) {
               }}
             />
           </div>
-          <Button onClick={onComplete} color="danger">
+          <Button onClick={onComplete} color="danger" sx={{ width: "100%" }}>
             SELECT
           </Button>
         </>

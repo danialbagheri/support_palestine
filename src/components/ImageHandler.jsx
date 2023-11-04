@@ -5,6 +5,8 @@ import ImageCropper from "./ImageCropper";
 import Modal from "@mui/joy/Modal";
 import Typography from "@mui/joy/Typography";
 import Sheet from "@mui/joy/Sheet";
+import TemplateOne from "../images/template1.png";
+import CircularProgress from "@mui/joy/CircularProgress";
 
 function ImageHandler() {
   const fileInputRef = useRef(null);
@@ -13,6 +15,7 @@ function ImageHandler() {
   const [open, setOpen] = React.useState(false);
   const caman = useCaman();
   const [image, setImage] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
 
   const handleImageUpload = (e) => {
     setOpen(true);
@@ -27,6 +30,7 @@ function ImageHandler() {
   };
   useEffect(() => {
     if (image) {
+      setLoading(true);
       console.log("image");
       console.log(image);
       imageRef.current.src = image.src;
@@ -35,13 +39,14 @@ function ImageHandler() {
         caman(imageRef.current, function () {
           // Add a flag overlay here
           this.newLayer(function () {
-            this.overlayImage("/images/template1.png");
+            this.overlayImage(TemplateOne);
           });
 
           this.render();
           console.log("rendered", this);
         });
       };
+      setLoading(false);
     }
   }, [image]);
 
@@ -98,12 +103,18 @@ function ImageHandler() {
         </Sheet>
       </Modal>
       {image && (
-        <img
-          ref={imageRef}
-          src=""
-          alt="imageRef"
-          style={{ maxWidth: "100%", maxHeight: "auto" }}
-        />
+        <>
+          {loading ? (
+            <CircularProgress color="neutral" determinate={false} size="lg" />
+          ) : (
+            <img
+              ref={imageRef}
+              src=""
+              alt="imageRef"
+              style={{ maxWidth: "100%", maxHeight: "auto" }}
+            />
+          )}
+        </>
       )}
     </div>
   );

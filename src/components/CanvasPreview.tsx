@@ -28,7 +28,7 @@ export async function canvasPreview(
   canvas.height = Math.floor(crop.height * scaleY * pixelRatio);
 
   ctx.scale(pixelRatio, pixelRatio);
-  ctx.imageSmoothingQuality = "high";
+  //   ctx.imageSmoothingQuality = "high";
 
   const cropX = crop.x * scaleX;
   const cropY = crop.y * scaleY;

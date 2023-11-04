@@ -1,6 +1,7 @@
 {
   "name": "caman-js-with-react",
   "version": "1.0.0",
+  "homepage": "https://danialbagheri.github.io/support_palestine/",
   "description": "",
   "keywords": [],
   "main": "src/index.tsx",
@@ -9,6 +10,7 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/inter": "^5.0.15",
     "@mui/joy": "^5.0.0-beta.13",
+    "canvas-size": "^1.2.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-image-crop": "^10.1.8",
@@ -17,9 +19,12 @@
   "devDependencies": {
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
+    "gh-pages": "^6.0.0",
     "typescript": "4.1.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
