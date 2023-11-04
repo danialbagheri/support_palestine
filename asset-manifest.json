@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/support_palestine/static/css/main.1d7876ed.css",
-    "main.js": "/support_palestine/static/js/main.34314550.js",
+    "main.js": "/support_palestine/static/js/main.d4507fb3.js",
+    "static/media/template1.png": "/support_palestine/static/media/template1.6eb2fe6cee9c20f87795.png",
     "index.html": "/support_palestine/index.html",
     "main.1d7876ed.css.map": "/support_palestine/static/css/main.1d7876ed.css.map",
-    "main.34314550.js.map": "/support_palestine/static/js/main.34314550.js.map"
+    "main.d4507fb3.js.map": "/support_palestine/static/js/main.d4507fb3.js.map"
   },
   "entrypoints": [
     "static/css/main.1d7876ed.css",
-    "static/js/main.34314550.js"
+    "static/js/main.d4507fb3.js"
   ]
 }
